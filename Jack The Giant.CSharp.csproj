@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background Scripts\BGScaler.cs" />
+    <Compile Include="Assets\Scripts\Cloud Collectors Script\CloudCollector.cs" />
+    <Compile Include="Assets\Scripts\Cloud Collectors Script\CouldSpawner.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
   </ItemGroup>
   <ItemGroup>
