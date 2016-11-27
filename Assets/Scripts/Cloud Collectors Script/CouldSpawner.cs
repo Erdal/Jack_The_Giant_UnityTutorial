@@ -25,6 +25,12 @@ public class CouldSpawner : MonoBehaviour
         controlX = 0;
         SetMinAndMax();
         CreateClouds();
+        player = GameObject.Find("Player");
+    }
+
+    void Start()
+    {
+        PositionThePlayer();
     }
 
 
@@ -87,4 +93,37 @@ public class CouldSpawner : MonoBehaviour
             positionY -= distanceBetweenClouds;
         }
     }
+
+    void PositionThePlayer()
+    {
+        GameObject[] darkClouds = GameObject.FindGameObjectsWithTag("Deadly");
+        GameObject[] cloudsInGame = GameObject.FindGameObjectsWithTag("Cloud");
+
+        for(int i = 0; i < darkClouds.Length; i++)
+        {
+            if(darkClouds[i].transform.position.y == 0f)
+            {
+                Vector3 t = darkClouds[i].transform.position;
+
+                darkClouds[i].transform.position = new Vector3(cloudsInGame[0].transform.position.x, cloudsInGame[0].transform.position.y, cloudsInGame[0].transform.position.z);
+
+                cloudsInGame[0].transform.position = t;
+            }
+        }
+
+        Vector3 temp = cloudsInGame[0].transform.position;
+
+        for(int i = 1; i < cloudsInGame.Length; i++)
+        {
+            if(temp.y < cloudsInGame[i].transform.position.y)
+            {
+                temp = cloudsInGame[i].transform.position;
+            }
+        }
+
+        temp.y += 0.8f;
+        player.transform.position = temp;
+
+    }
+
 } // CloudSpawner
