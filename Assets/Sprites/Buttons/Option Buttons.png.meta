@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 25b035ed52d98ab4580f1d3c374ff1f9
-timeCreated: 1468144742
+timeCreated: 1480309515
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Easy Button
+    21300002: Medium Button
+    21300004: Hard Button
+    21300006: Option Buttons_3
+    21300008: Back Button
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +43,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +54,89 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Easy Button
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 253
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -126.5, y: 30.5}
+        - {x: -126.5, y: -30.5}
+        - {x: 126.5, y: -30.5}
+        - {x: 126.5, y: 30.5}
+    - name: Medium Button
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 124
+        width: 253
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122.5, y: 31}
+        - {x: -125.5, y: 31}
+        - {x: -126.5, y: 30}
+        - {x: -126.5, y: -26}
+        - {x: -125.5, y: -31}
+        - {x: 117.5, y: -31}
+        - {x: 125.5, y: -27}
+        - {x: 126.5, y: -22}
+        - {x: 126.5, y: 25}
+    - name: Hard Button
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 58
+        width: 253
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -120.5, y: 31}
+        - {x: -126.5, y: 20}
+        - {x: -126.5, y: -31}
+        - {x: 126.5, y: -31}
+        - {x: 126.5, y: 23}
+        - {x: 116.5, y: 31}
+    - name: Option Buttons_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 15
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Back Button
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 27}
+        - {x: -27, y: 20}
+        - {x: -27, y: -22}
+        - {x: -20, y: -27}
+        - {x: 24, y: -27}
+        - {x: 27, y: -19}
+        - {x: 27, y: 25}
+        - {x: 22, y: 27}
     outline: []
   spritePackingTag: 
   userData: 
