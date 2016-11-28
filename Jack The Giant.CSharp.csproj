@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -69,6 +75,9 @@
     <Compile Include="Assets\Scripts\Camera Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Script\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Script\CouldSpawner.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\HighScoreController.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\OptionsController.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerBounds.cs" />
   </ItemGroup>
