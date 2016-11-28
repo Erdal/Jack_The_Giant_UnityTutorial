@@ -1,13 +1,13 @@
 fileFormatVersion: 2
 guid: 25b035ed52d98ab4580f1d3c374ff1f9
-timeCreated: 1480309515
+timeCreated: 1480356079
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Easy Button
     21300002: Medium Button
     21300004: Hard Button
-    21300006: Option Buttons_3
+    21300006: Check Sign
     21300008: Back Button
   serializedVersion: 2
   mipmaps:
@@ -107,7 +107,7 @@ TextureImporter:
         - {x: 126.5, y: -31}
         - {x: 126.5, y: 23}
         - {x: 116.5, y: 31}
-    - name: Option Buttons_3
+    - name: Check Sign
       rect:
         serializedVersion: 2
         x: 58
