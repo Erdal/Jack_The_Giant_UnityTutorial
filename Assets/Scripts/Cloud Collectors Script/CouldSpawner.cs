@@ -26,6 +26,11 @@ public class CouldSpawner : MonoBehaviour
         SetMinAndMax();
         CreateClouds();
         player = GameObject.Find("Player");
+
+        for(int i = 0; i < collectables.Length; i++) //To de-activate the colectables since they start activated.
+        {
+            collectables[i].SetActive(false);
+        }
     }
 
     void Start()
@@ -137,7 +142,7 @@ public class CouldSpawner : MonoBehaviour
                 Vector3 temp = target.transform.position;
 
                 for (int i = 0; i < clouds.Length; i++)
-                {
+                { //Spawning and actvating out clouds
                     if(!clouds[i].activeInHierarchy)
                     {
                         if (controlX == 0)
@@ -166,6 +171,36 @@ public class CouldSpawner : MonoBehaviour
 
                         clouds[i].transform.position = temp;
                         clouds[i].SetActive(true);
+
+                        int random = Random.Range(0, collectables.Length);
+                        
+                        //If the cloud is not a deadly one
+                        if(clouds[i].tag != "Deadly")
+                        {
+                            //If the random collectable item is not active
+                            if(!collectables[random].activeInHierarchy)
+                            {
+                                //We want to place the collectable object a ontop of the cloud
+                                Vector3 temp2 = clouds[i].transform.position;
+                                temp2.y += 0.7f;
+
+                                //If the item we are spawning is a life
+                                if(collectables[random].tag == "Life")
+                                {
+                                    //Checking to see if player has less then 2 lives since we dont want to spawn anymore if they dont
+                                    if(PlayerScore.lifeCount < 2)
+                                    {
+                                        collectables[random].transform.position = temp2;
+                                        collectables[random].SetActive(true);
+                                    }
+                                }
+                                else
+                                {
+                                    collectables[random].transform.position = temp2;
+                                    collectables[random].SetActive(true);
+                                }
+                            }
+                        }
                     }
                 }
             }
