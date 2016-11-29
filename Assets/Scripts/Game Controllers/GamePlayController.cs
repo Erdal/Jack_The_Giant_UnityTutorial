@@ -9,16 +9,24 @@ public class GamePlayController : MonoBehaviour
     public static GamePlayController instance;
 
     [SerializeField]
-    private Text scoreText, coinText, lifeText; //So we can effect all out text elements on the UI
+    private Text scoreText, coinText, lifeText, gameOverScoreText, gameOverCoinText; //So we can effect all out text elements on the UI
 
     [SerializeField]
-    private GameObject pausePanel; //So we can effect our pause panel
+    private GameObject pausePanel, gameOverPanel; //So we can effect our pause panel
+
+    [SerializeField]
+    private GameObject readyButton;
 
     // Use this for initialization
     void Awake()
     {
         MakeInstance();
 	}
+
+    void Start()
+    {
+        Time.timeScale = 0f; //Stops everything
+    }
 	
 	void MakeInstance()
     {
@@ -27,6 +35,21 @@ public class GamePlayController : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    //Here we are setting up our gameover panel
+    public void GameOverShowPanel(int finalScore, int finalCoinScore)
+    {
+        gameOverPanel.SetActive(true); //Turn game over panel on
+        gameOverScoreText.text = finalScore.ToString(); //Send final score through to panel
+        gameOverCoinText.text = finalCoinScore.ToString(); //Send final coin score through to panel
+        StartCoroutine(GameOverLoadMainMenu());
+    }
+
+    IEnumerator GameOverLoadMainMenu()
+    {
+        yield return new WaitForSeconds(3f); //Wait 3 seconds
+        SceneManager.LoadScene("MainMenu"); //Go to main menu
     }
 
     public void SetScore(int score)
@@ -45,20 +68,26 @@ public class GamePlayController : MonoBehaviour
     }
 
     public void PauseTheGame()
-    {
+    { //Pause game
         Time.timeScale = 0f; //This keeps everything going
         pausePanel.SetActive(true); //Shows the pause panel to the user
     }
 
     public void ResumeGame()
-    {
+    { //Resume Game
         Time.timeScale = 1f; //This keeps everything going
         pausePanel.SetActive(false); //Turns pause panel off
     }
 
     public void QuitGame()
-    {
+    { //Quit Game
         Time.timeScale = 1f; //This keeps everything going
         SceneManager.LoadScene("MainMenu"); //Load up the main menu
+    }
+
+    public void StartTheGame()
+    {//Start the game
+        Time.timeScale = 1f; //Make everything work again
+        readyButton.SetActive(false); //Turn off ready button on UI
     }
 }
