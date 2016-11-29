@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Cloud Collectors Script\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\Cloud Collectors Script\CouldSpawner.cs" />
     <Compile Include="Assets\Scripts\Collectables Scripts\CollectableScript.cs" />
+    <Compile Include="Assets\Scripts\Game Controllers\GamePlayController.cs" />
     <Compile Include="Assets\Scripts\Game Controllers\HighScoreController.cs" />
     <Compile Include="Assets\Scripts\Game Controllers\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Game Controllers\OptionsController.cs" />
