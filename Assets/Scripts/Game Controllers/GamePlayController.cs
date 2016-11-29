@@ -29,6 +29,21 @@ public class GamePlayController : MonoBehaviour
         }
     }
 
+    public void SetScore(int score)
+    {
+        scoreText.text = "x" + score;
+    }
+
+    public void SetCoinScore(int coinScore)
+    {
+        coinText.text = "x" + coinScore;
+    }
+
+    public void SetLifeScore(int lifeScore)
+    {
+        lifeText.text = "x" + lifeScore;
+    }
+
     public void PauseTheGame()
     {
         Time.timeScale = 0f; //This keeps everything going

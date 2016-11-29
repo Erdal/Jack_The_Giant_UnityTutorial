@@ -43,6 +43,7 @@ public class PlayerScore : MonoBehaviour
                 scoreCount++;
             }
             previousPosition = transform.position;
+            GamePlayController.instance.SetScore(scoreCount);
         }
     }
 
@@ -54,6 +55,9 @@ public class PlayerScore : MonoBehaviour
             coinCount++; //Give them a coin
             Collectables(200, coinClip);
             target.gameObject.SetActive(false); //Turn off coin that player has grabbed
+
+            GamePlayController.instance.SetScore(scoreCount);
+            GamePlayController.instance.SetCoinScore(coinCount);
         }
 
         //If player touches a life
@@ -62,6 +66,9 @@ public class PlayerScore : MonoBehaviour
             lifeCount++;
             Collectables(300, lifeClip);
             target.gameObject.SetActive(false); //Turn off coin that player has grabbed
+
+            GamePlayController.instance.SetScore(scoreCount);
+            GamePlayController.instance.SetLifeScore(lifeCount);
         }
 
         //If player touches the bounds of the playable area
