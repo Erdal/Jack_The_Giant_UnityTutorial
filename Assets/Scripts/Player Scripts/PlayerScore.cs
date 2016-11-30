@@ -96,5 +96,6 @@ public class PlayerScore : MonoBehaviour
         countScore = false; //Stop counting score
         transform.position = new Vector3(500, 500, 0); //Move player outside of camera so the user thinks they are dead
         lifeCount--; //Take away a life from player
+        GameManager.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
     }
 }

@@ -16,6 +16,9 @@ public class MainMenuController : MonoBehaviour {
 
     public void StartGame()
     {
+        //We are making sure our GameManger knows the player is starting a new game
+        GameManager.instance.gameStartedFromMainMenu = true;
+        //We are going to the game scene
         SceneManager.LoadScene("Gameplay");
     }
 
