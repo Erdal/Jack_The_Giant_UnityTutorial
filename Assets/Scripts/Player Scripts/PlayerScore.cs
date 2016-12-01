@@ -72,15 +72,13 @@ public class PlayerScore : MonoBehaviour
         }
 
         //If player touches the bounds of the playable area
-        if(target.tag == "Bounds")
+        if(target.tag == "Bounds" || target.tag == "Deadly")
         {
-            Death();
-        }
-
-        //If player touches deadly cloud
-        if(target.tag == "Deadly")
-        {
-            Death();
+            cameraScript.moveCamera = false; //Make camera stip moving
+            countScore = false; //Stop counting score
+            transform.position = new Vector3(500, 500, 0); //Move player outside of camera so the user thinks they are dead
+            lifeCount--; //Take away a life from player
+            GameManager.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
         }
     }
 
@@ -88,14 +86,5 @@ public class PlayerScore : MonoBehaviour
     {
         scoreCount += scoreReward; //Give them extra points
         AudioSource.PlayClipAtPoint(sound, transform.position); //Play the coin getting audio clip
-    }
-
-    void Death()
-    {
-        cameraScript.moveCamera = false; //Make camera stip moving
-        countScore = false; //Stop counting score
-        transform.position = new Vector3(500, 500, 0); //Move player outside of camera so the user thinks they are dead
-        lifeCount--; //Take away a life from player
-        GameManager.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
     }
 }

@@ -57,16 +57,16 @@ public class GameManager : MonoBehaviour
         if(!PlayerPrefs.HasKey("Game Initialized"))
         {
             GamePreferences.SetEasyDifficultyState(0);
-            GamePreferences.SetEasyDifficultyCoinScoreState(0);
-            GamePreferences.SetEasyDifficultyHighScoreState(0);
+            GamePreferences.SetEasyDifficultyCoinScore(0);
+            GamePreferences.SetEasyDifficultyHighScore(0);
 
             GamePreferences.SetMediumDifficultyState(1);
-            GamePreferences.SetMediumDifficultyCoinScoreState(0);
-            GamePreferences.SetMediumDifficultyHighScoreState(0);
+            GamePreferences.SetMediumDifficultyCoinScore(0);
+            GamePreferences.SetMediumDifficultyHighScore(0);
 
             GamePreferences.SetHardDifficultyState(0);
-            GamePreferences.SetHardDifficultyCoinScoreState(0);
-            GamePreferences.SetHardDifficultyHighScoreState(0);
+            GamePreferences.SetHardDifficultyCoinScore(0);
+            GamePreferences.SetHardDifficultyHighScore(0);
 
             GamePreferences.SetIsMusicState(0);
 
@@ -93,6 +93,53 @@ public class GameManager : MonoBehaviour
         //If player has no more lives to contiue
         if(_lifeScore < 0)
         {
+            //Setting the new high score, if there is a new high score to set
+            if(GamePreferences.GetEasyDifficultyState() == 1)
+            {
+                int highScore = GamePreferences.GetEasyDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetEasyDifficultyCoinScore();
+
+                if(highScore < _score)
+                {
+                    GamePreferences.SetEasyDifficultyHighScore(_score);
+                }
+
+                if(coinHighScore < _coinScore)
+                {
+                    GamePreferences.SetEasyDifficultyCoinScore(_coinScore);
+                }
+            }
+            else if (GamePreferences.GetMediumDifficultyState() == 1)
+            {
+                int highScore = GamePreferences.GetMediumDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetMediumDifficultyCoinScore();
+
+                if (highScore < _score)
+                {
+                    GamePreferences.SetMediumDifficultyHighScore(_score);
+                }
+
+                if (coinHighScore < _coinScore)
+                {
+                    GamePreferences.SetMediumDifficultyCoinScore(_coinScore);
+                }
+            }
+            else if (GamePreferences.GetHardDifficultyState() == 1)
+            {
+                int highScore = GamePreferences.GetHardDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetHardDifficultyCoinScore();
+
+                if (highScore < _score)
+                {
+                    GamePreferences.SetHardDifficultyHighScore(_score);
+                }
+
+                if (coinHighScore < _coinScore)
+                {
+                    GamePreferences.SetHardDifficultyCoinScore(_coinScore);
+                }
+            }
+
             gameStartedFromMainMenu = false;
             gameRestartedAfterPlayerDied = false;
 

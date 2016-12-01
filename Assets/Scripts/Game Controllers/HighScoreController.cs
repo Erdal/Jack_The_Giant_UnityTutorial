@@ -26,15 +26,15 @@ public class HighScoreController : MonoBehaviour
     {
         if(GamePreferences.GetEasyDifficultyState() == 1)
         {//If user choose easy
-            SetScore(GamePreferences.GetEasyDifficultyHighScoreState(), GamePreferences.GetEasyDifficultyCoinScoreState());
+            SetScore(GamePreferences.GetEasyDifficultyHighScore(), GamePreferences.GetEasyDifficultyCoinScore());
         }
         else if (GamePreferences.GetMediumDifficultyState() == 1)
         {//If user choose medium
-            SetScore(GamePreferences.GetMediumDifficultyHighScoreState(), GamePreferences.GetMediumDifficultyCoinScoreState());
+            SetScore(GamePreferences.GetMediumDifficultyHighScore(), GamePreferences.GetMediumDifficultyCoinScore());
         }
         else if (GamePreferences.GetHardDifficultyState() == 1)
         {//If user choose hard
-            SetScore(GamePreferences.GetHardDifficultyHighScoreState(), GamePreferences.GetHardDifficultyCoinScoreState());
+            SetScore(GamePreferences.GetHardDifficultyHighScore(), GamePreferences.GetHardDifficultyCoinScore());
         }
     }
 	

@@ -183,7 +183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1235447180}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 42, y: 38}
@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336d39ea8cbfd6d4d9523b30b3271722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1306690817}
-  coinText: {fileID: 1388671973}
+  scoreText: {fileID: 1388671973}
+  coinText: {fileID: 1306690817}
 --- !u!4 &316942105
 Transform:
   m_ObjectHideFlags: 0
@@ -490,8 +490,8 @@ RectTransform:
   m_Children:
   - {fileID: 14195487}
   - {fileID: 1388671972}
-  - {fileID: 1306690816}
   - {fileID: 259366421}
+  - {fileID: 1306690816}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -528,10 +528,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1235447180}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.5, y: -203}
+  m_AnchoredPosition: {x: -53040.01, y: 1266720.2}
   m_SizeDelta: {x: 240, y: 69.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306690817
