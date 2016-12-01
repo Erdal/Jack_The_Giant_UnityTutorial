@@ -510,7 +510,7 @@ GameObject:
   - 222: {fileID: 1306690818}
   - 114: {fileID: 1306690817}
   m_Layer: 5
-  m_Name: Coin Score
+  m_Name: Coin Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,7 +531,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53040.01, y: 1266720.2}
+  m_AnchoredPosition: {x: 5, y: -205}
   m_SizeDelta: {x: 240, y: 69.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306690817
@@ -584,7 +584,7 @@ GameObject:
   - 222: {fileID: 1388671974}
   - 114: {fileID: 1388671973}
   m_Layer: 5
-  m_Name: HighScore Text
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
