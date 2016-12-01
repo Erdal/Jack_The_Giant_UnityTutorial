@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
         MakeSingleton();
 	}
 
+    void Start()
+    {
+        InitializeVariables();
+    }
+
     void OnLevelWasLoaded()
     {
         if(SceneManager.GetActiveScene().name == "Gameplay")
@@ -44,6 +49,29 @@ public class GameManager : MonoBehaviour
         PlayerScore.scoreCount = _score;
         PlayerScore.coinCount = _coinScore;
         PlayerScore.lifeCount = _lifeScore;
+    }
+
+    void InitializeVariables()
+    {
+        //The automatic difficulty are game starts at will be medium, everything else we will set to 0 for now as a clean slate
+        if(!PlayerPrefs.HasKey("Game Initialized"))
+        {
+            GamePreferences.SetEasyDifficultyState(0);
+            GamePreferences.SetEasyDifficultyCoinScoreState(0);
+            GamePreferences.SetEasyDifficultyHighScoreState(0);
+
+            GamePreferences.SetMediumDifficultyState(1);
+            GamePreferences.SetMediumDifficultyCoinScoreState(0);
+            GamePreferences.SetMediumDifficultyHighScoreState(0);
+
+            GamePreferences.SetHardDifficultyState(0);
+            GamePreferences.SetHardDifficultyCoinScoreState(0);
+            GamePreferences.SetHardDifficultyHighScoreState(0);
+
+            GamePreferences.SetIsMusicState(0);
+
+            PlayerPrefs.SetInt("Game Initialized", 1); //To make sure we dont always call this if statment
+        }
     }
 	
 	void MakeSingleton()
