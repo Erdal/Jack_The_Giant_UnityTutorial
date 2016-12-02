@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11467848}
   - 114: {fileID: 11452734}
   - 114: {fileID: 11427162}
+  - 114: {fileID: 11424278}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -83,6 +84,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11424278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531870160be6c2040b221d0c99ee8853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11427162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59fe6074a2a71146b079cd8b226bdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: 21bd680874932ae49bac0a41987fdc6c, type: 3}
+  lifeClip: {fileID: 8300000, guid: b7b9ecb221e70504daa687cfb93dcaa9, type: 3}
 --- !u!114 &11452734
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,7 +4,6 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
     public float speed = 8f, maxVelocity = 4f;
-
     private Rigidbody2D myBody;
     private Animator anim;
 
@@ -62,7 +61,7 @@ public class Player : MonoBehaviour {
             }
 
             Vector3 temp = transform.localScale;
-            temp.x = -1.3f;
+            temp.x = -1f;
             transform.localScale = temp;
 
             anim.SetBool("Walk", true);
