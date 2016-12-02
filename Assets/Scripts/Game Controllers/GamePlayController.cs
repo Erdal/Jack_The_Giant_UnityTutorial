@@ -49,7 +49,7 @@ public class GamePlayController : MonoBehaviour
     IEnumerator GameOverLoadMainMenu()
     {
         yield return new WaitForSeconds(3f); //Wait 3 seconds
-        SceneManager.LoadScene("MainMenu"); //Go to main menu
+        SceneFader.instance.LoadLevel("MainMenu"); //fade in, then out into the main menu
     }
 
     public void PlayerDiedRestartTheGame()
@@ -59,8 +59,8 @@ public class GamePlayController : MonoBehaviour
 
     IEnumerator PlayerDiedRestart()
     {
-        yield return new WaitForSeconds(1f); //Wait 3 seconds
-        SceneManager.LoadScene("Gameplay"); //Go to main menu
+        yield return new WaitForSeconds(1f); //Wait 1 seconds
+        SceneFader.instance.LoadLevel("Gameplay"); //Fade in, then out into gameplay
     }
 
     public void SetScore(int score)
@@ -93,7 +93,7 @@ public class GamePlayController : MonoBehaviour
     public void QuitGame()
     { //Quit Game
         Time.timeScale = 1f; //This keeps everything going
-        SceneManager.LoadScene("MainMenu"); //Load up the main menu
+        SceneFader.instance.LoadLevel("MainMenu"); //fade in, then out into the main menu
     }
 
     public void StartTheGame()
