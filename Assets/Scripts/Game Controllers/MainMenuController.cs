@@ -1,18 +1,36 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class MainMenuController : MonoBehaviour {
+public class MainMenuController : MonoBehaviour
+{
+    [SerializeField]
+    private Button musicButton;
+
+    [SerializeField]
+    private Sprite[] musicIcons;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start()
+    {
+        CheckToPlayTheMusic();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    //Here we are checking to see if our music should be on, and then playing it if it should be
+    void CheckToPlayTheMusic()
+    {
+        if(GamePreferences.GetIsMusicState() == 1) //If music should be on
+        {
+            MusicController.instance.PlayMusic(true); //Turn music on
+            musicButton.image.sprite = musicIcons[1]; //Show music on icon
+        }
+        else //Else if shouldnt
+        {
+            MusicController.instance.PlayMusic(false); //Turn music off
+            musicButton.image.sprite = musicIcons[0]; //Show music off icon
+        }
+    }
 
     public void StartGame()
     {
@@ -40,6 +58,17 @@ public class MainMenuController : MonoBehaviour {
 
     public void MusicButton()
     {
-
+        if(GamePreferences.GetIsMusicState() == 0)
+        {
+            GamePreferences.SetIsMusicState(1);
+            MusicController.instance.PlayMusic(true); //Turn music on
+            musicButton.image.sprite = musicIcons[1]; //Show music on icon
+        }
+        else if(GamePreferences.GetIsMusicState() == 1)
+        {
+            GamePreferences.SetIsMusicState(0);
+            MusicController.instance.PlayMusic(false); //Turn music on
+            musicButton.image.sprite = musicIcons[0]; //Show music on icon
+        }
     }
 }
